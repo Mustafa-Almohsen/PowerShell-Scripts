@@ -1,0 +1,14 @@
+# Get a list of all services
+$services = Get-Service
+
+# Iterate through each service
+foreach ($service in $services) {
+    # Check if the service status is "Running"
+    if ($service.Status -eq "Running") {
+        # Output the name of the service
+        Write-Output $service.Name
+    }
+}
+
+# Prompt the user to press enter before exiting
+Read-Host "Press Enter to Exit"
